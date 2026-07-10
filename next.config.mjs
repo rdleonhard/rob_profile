@@ -9,6 +9,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  typescript: {
+    tsconfigPath: process.env.GITHUB_ACTIONS
+      ? "tsconfig.pages.json"
+      : "tsconfig.json",
+  },
 };
 
 export default nextConfig;
