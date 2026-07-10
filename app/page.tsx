@@ -71,7 +71,7 @@ export default function Home() {
         </div>
         <div className="portrait-wrap" aria-label="Portrait of Robert D. Leonhard">
           <div className="portrait-edge" />
-          <img src="/rob-suit-portrait.png" alt="Robert D. Leonhard in a dark suit" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/rob-suit-portrait.png`} alt="Robert D. Leonhard in a dark suit" />
         </div>
       </section>
 
