@@ -46,7 +46,7 @@ export default function Home() {
     setSending(true);
     setFormStatus("Sending your message…");
     try {
-      const response = await fetch("https://formsubmit.co/ajax/rdleonhard@pm.me", {
+      const response = await fetch("https://formsubmit.co/ajax/b1cd22c342928e9dffbcf98f9ecb7ee7", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: new FormData(form),
@@ -58,7 +58,7 @@ export default function Home() {
       form.reset();
       setFormStatus("Thank you — your message has been sent.");
     } catch {
-      setFormStatus("Something went wrong sending your message. Please email rdleonhard@pm.me directly.");
+      setFormStatus("Something went wrong sending your message. Please try again in a moment.");
     } finally {
       setSending(false);
     }
