@@ -38,10 +38,30 @@ const education = [
 
 export default function Home() {
   const [formStatus, setFormStatus] = useState("");
+  const [sending, setSending] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFormStatus("Message delivery is being connected. For now, your note has not been sent.");
+    const form = event.currentTarget;
+    setSending(true);
+    setFormStatus("Sending your message…");
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/rdleonhard@pm.me", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const result = await response.json();
+      if (!response.ok || String(result.success) !== "true") {
+        throw new Error(result.message ?? `Request failed: ${response.status}`);
+      }
+      form.reset();
+      setFormStatus("Thank you — your message has been sent.");
+    } catch {
+      setFormStatus("Something went wrong sending your message. Please email rdleonhard@pm.me directly.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -160,10 +180,12 @@ export default function Home() {
           <p>For professional inquiries, speaking opportunities, and conversations at the intersection of law and technology.</p>
         </div>
         <form onSubmit={handleSubmit}>
+          <input type="hidden" name="_subject" value="New inquiry from robertleonhard profile site" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
           <label>Name<input name="name" autoComplete="name" required /></label>
           <label>Email<input name="email" type="email" autoComplete="email" required /></label>
           <label className="full">What would you like to discuss?<textarea name="message" rows={4} required /></label>
-          <button className="button button-primary" type="submit">Send Message</button>
+          <button className="button button-primary" type="submit" disabled={sending}>{sending ? "Sending…" : "Send Message"}</button>
           <p className="form-status" role="status">{formStatus}</p>
           <p className="form-notice full">Please do not send confidential, sensitive, or time-sensitive information through this form. Submitting a message does not create an attorney-client relationship.</p>
         </form>
