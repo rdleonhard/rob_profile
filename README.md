@@ -31,7 +31,7 @@ The test command creates and validates the production artifact and checks the re
 
 ## Hosting
 
-The live version is deployed through ChatGPT Sites. The repository can also be adapted for another compatible React or Cloudflare hosting provider. The contact form is presently a visual placeholder and does not transmit submissions.
+The live version is deployed through ChatGPT Sites. The repository can also be adapted for another compatible React or Cloudflare hosting provider. The contact form submits professional inquiries through a privacy-preserving FormSubmit alias; its endpoint should be tested after any hosting or domain change.
 
 ## Legal notice
 

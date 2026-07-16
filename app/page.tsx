@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 
 const experience = [
   {
@@ -66,46 +67,66 @@ export default function Home() {
 
   return (
     <main>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
-        <a className="monogram" href="#top" aria-label="Robert Leonhard home">RL</a>
+        <a className="brand-lockup" href="#main-content" aria-label="Robert Leonhard home">
+          <span className="monogram">RL</span>
+          <span className="brand-copy"><strong>Robert D. Leonhard</strong><span>Counsel · Strategy · Systems</span></span>
+        </a>
         <nav aria-label="Primary navigation">
           <a href="#profile">Profile</a>
           <a href="#experience">Experience</a>
-          <a href="#focus">Practice Focus</a>
+          <a href="#focus">Focus</a>
           <a href="#perspective">Perspective</a>
         </nav>
-        <a className="header-cta" href="#contact">Get in Touch</a>
+        <a className="header-cta" href="#contact">Start a Conversation <span aria-hidden="true">↗</span></a>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero" id="main-content">
         <div className="hero-copy">
-          <p className="eyebrow">Attorney · Advisor · Builder</p>
-          <h1>Robert D. Leonhard</h1>
-          <p className="role-line">Attorney <span>•</span> Digital Assets <span>•</span> Emerging Technology</p>
+          <p className="eyebrow"><span>01</span> Counsel for consequential moves</p>
+          <h1>Robert D.<br /><em>Leonhard</em></h1>
+          <p className="role-line">Attorney <span>•</span> Advisor <span>•</span> Builder</p>
           <div className="signal-line" aria-hidden="true"><span /></div>
-          <p className="hero-statement">I guide companies and institutions through complex challenges where law, capital, and technology converge.</p>
+          <p className="hero-statement">I advise builders, boards, and investors when the law is unsettled, the stakes are real, and the technology is moving fast.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#experience">View Experience</a>
-            <a className="button button-secondary" href="#contact">Get in Touch</a>
+            <a className="button button-secondary" href="#contact">Bring the Hard Problem <span aria-hidden="true">↗</span></a>
+          </div>
+          <div className="hero-proof" aria-label="Professional summary">
+            <span>17+ years private practice</span>
+            <span>Digital-asset general counsel</span>
+            <span>Army veteran</span>
           </div>
         </div>
         <div className="portrait-wrap" aria-label="Portrait of Robert D. Leonhard">
           <div className="portrait-edge" />
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/rob-suit-portrait.jpg`} alt="Robert D. Leonhard in a dark suit" />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/rob-suit-portrait.jpg`}
+            alt="Robert D. Leonhard in a dark suit"
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 48vw"
+            unoptimized
+          />
+          <div className="portrait-caption"><span>Robert D. Leonhard</span><strong>Law / Capital / Code</strong></div>
+          <span className="portrait-index" aria-hidden="true">RDL / 01</span>
         </div>
       </section>
 
       <section className="credibility" aria-label="Professional highlights">
-        <div><strong>17+ Years</strong><span>Private Practice</span></div>
-        <div><strong>General Counsel</strong><span>Digital Assets</span></div>
-        <div><strong>U.S. Army</strong><span>Iraq War Veteran</span></div>
-        <div><strong>Pittsburgh</strong><span>Pennsylvania</span></div>
+        <div><small>01</small><strong>17+ Years</strong><span>Private Practice</span></div>
+        <div><small>02</small><strong>General Counsel</strong><span>Digital Assets</span></div>
+        <div><small>03</small><strong>U.S. Army</strong><span>Iraq War Veteran</span></div>
+        <div><small>04</small><strong>Pittsburgh</strong><span>Pennsylvania</span></div>
       </section>
+
+      <div className="brand-ribbon" aria-hidden="true"><span>Law</span><i>◆</i><span>Capital</span><i>◆</i><span>Technology</span><i>◆</i><span>Judgment</span><i>◆</i><span>Systems</span></div>
 
       <section className="intro section" id="profile">
         <p className="section-kicker">Profile / 01</p>
         <div>
-          <h2>Where <em>law</em> meets the <em>next economy.</em></h2>
+          <h2>When the playbook ends, <em>judgment begins.</em></h2>
           <p>For nearly two decades, I have worked where established legal frameworks meet new markets. My practice combines securities and corporate law, investment-management experience, and genuine technical fluency—the ability to understand not only what a client is building, but how it works.</p>
         </div>
       </section>
@@ -113,7 +134,7 @@ export default function Home() {
       <section className="section experience-section" id="experience">
         <div className="section-heading">
           <p className="section-kicker">Experience / 02</p>
-          <h2>Counsel shaped by the work.</h2>
+          <h2>High-stakes counsel. Ground-level fluency.</h2>
           <p>Strategic judgment built through private practice, executive responsibility, and years advising the digital-asset industry.</p>
         </div>
         <div className="timeline">
@@ -130,7 +151,7 @@ export default function Home() {
       <section className="section expertise-section" id="focus">
         <div className="section-heading compact">
           <p className="section-kicker">Practice Focus / 03</p>
-          <h2>Legal precision.<br />Technical range.</h2>
+          <h2>Rules, risk, and the systems underneath.</h2>
         </div>
         <div className="expertise-grid">
           {practiceFocus.map(([number, title, text]) => (
@@ -176,7 +197,7 @@ export default function Home() {
       <section className="contact section" id="contact">
         <div>
           <p className="section-kicker">Contact / 05</p>
-          <h2>Let’s discuss what you’re building.</h2>
+          <h2>Bring the hard problem.</h2>
           <p>For professional inquiries, speaking opportunities, and conversations at the intersection of law and technology.</p>
         </div>
         <form onSubmit={handleSubmit}>
@@ -201,7 +222,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="monogram" href="#top">RL</a>
+        <a className="monogram" href="#main-content" aria-label="Back to top">RL</a>
         <p>© {new Date().getFullYear()} Robert D. Leonhard · Pennsylvania Attorney · Responsible for site content</p>
         <a href="#top">Back to top ↑</a>
       </footer>
