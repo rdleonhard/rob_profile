@@ -29,5 +29,16 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+  assert.match(html, developmentPreviewMeta);
+  assert.match(
+    html,
+    /<title>[^<]*Robert D\. Leonhard[^<]*<\/title>/i,
+    "page title should identify Robert D. Leonhard, not the starter template",
+  );
+  assert.match(
+    html,
+    /<meta[^>]*\bname=["']description["'][^>]*Pennsylvania attorney/i,
+    "meta description should describe the practice",
+  );
 });
