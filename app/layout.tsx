@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const serif = Source_Serif_4({
+  variable: "--font-serif",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
+const mono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -86,7 +93,12 @@ const personJsonLd = {
     "Regulatory strategy",
     "Blockchain technology",
   ],
-  sameAs: ["https://github.com/rdleonhard"],
+  sameAs: [
+    "https://github.com/rdleonhard",
+    "https://rdleonhard.github.io/open-esquire-verifier/",
+    "https://rdleonhard.github.io/digital-testament/",
+    "https://rdleonhard.github.io/blog/",
+  ],
 };
 
 export default function RootLayout({
@@ -96,7 +108,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${serif.variable} ${mono.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
