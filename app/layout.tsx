@@ -98,6 +98,7 @@ const personJsonLd = {
     "https://rdleonhard.github.io/open-esquire-verifier/",
     "https://rdleonhard.github.io/digital-testament/",
     "https://rdleonhard.github.io/blog/",
+    "https://www.researchgate.net/scientific-contributions/Robert-Donald-Leonhard-2129753377",
   ],
 };
 

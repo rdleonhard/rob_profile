@@ -87,13 +87,46 @@ const docket = [
   },
 ];
 
+const scholarship = [
+  {
+    year: "2016",
+    title: "Developing Renewable Energy Credits as Cryptocurrency on Ethereum's Blockchain",
+    href: "https://ssrn.com/abstract=2885335",
+    body: "Proposes issuing, transferring, and authenticating renewable-energy credits on Ethereum, in place of third-party certifiers.",
+  },
+  {
+    year: "2017",
+    title: "Corporate Governance on Ethereum's Blockchain",
+    href: "https://ssrn.com/abstract=2977522",
+    body: "On decentralized autonomous organizations operating like publicly traded corporations — token holders appointing a board-like governing body that issues currency and pays salaries.",
+  },
+  {
+    year: "2017",
+    title: "Developing the Crypto Carbon Credit on Ethereum's Blockchain",
+    href: "https://ssrn.com/abstract=3000472",
+    body: "A decentralized approach to capping greenhouse-gas emissions: teams of academics issuing carbon credits as cryptocurrency.",
+  },
+  {
+    year: "2017",
+    title: "Forget Paris: Building a Carbon Market in the U.S. Using Blockchain-Based Smart Contracts",
+    href: "https://ssrn.com/abstract=3082450",
+    body: "A U.S. carbon market built on smart contracts, with university departments as issuers of offset credits.",
+  },
+  {
+    year: "2019",
+    title: "Decentralized Finance on the Ethereum Blockchain",
+    href: "https://ssrn.com/abstract=3359732",
+    body: "Decentralized finance as an option of last resort for people fleeing failing institutions — and the regulation attorneys need to advise on it in good faith.",
+  },
+];
+
 const education = [
   ["2018", "LL.M., Energy & Sustainable Development Law", "West Virginia University College of Law"],
   ["2009", "J.D.", "University of Pittsburgh School of Law"],
   ["2003", "B.F.A.", "West Virginia University"],
 ];
 
-const sections = { practice: "§ 1", record: "§ 2", exhibits: "§ 3", "before-the-bar": "§ 4", contact: "§ 5" } as const;
+const sections = { practice: "§ 1", record: "§ 2", exhibits: "§ 3", scholarship: "§ 4", "before-the-bar": "§ 5", contact: "§ 6" } as const;
 type SectionId = keyof typeof sections;
 
 function SectionMark({
@@ -164,6 +197,7 @@ export default function Home() {
           <a href="#practice">practice</a>
           <a href="#record">record</a>
           <a href="#exhibits">exhibits</a>
+          <a href="#scholarship">scholarship</a>
           <a href="#contact">contact</a>
         </nav>
         <p className="site-admitted">Pittsburgh, PA — admitted: Pennsylvania</p>
@@ -307,6 +341,34 @@ export default function Home() {
               </article>
             </div>
           </div>
+        </section>
+
+        <section className="doc-section" id="scholarship">
+          <SectionMark id="scholarship" copied={copied} onCite={cite} />
+          <h2>Scholarship</h2>
+          <p className="standfirst">
+            Writing on Ethereum&rsquo;s legal architecture since 2016 —
+            environmental markets, corporate governance, decentralized
+            finance.
+          </p>
+          <div className="pubs">
+            {scholarship.map((paper) => (
+              <article className="pub-row" key={paper.href}>
+                <span className="pub-year">{paper.year}</span>
+                <div>
+                  <h3>
+                    <a href={paper.href} target="_blank" rel="noopener noreferrer">{paper.title}</a>
+                  </h3>
+                  <p className="pub-venue">SSRN working paper</p>
+                  <p>{paper.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="pub-note">
+            Cited 50+ times in the academic literature ·{" "}
+            <a href="https://www.researchgate.net/scientific-contributions/Robert-Donald-Leonhard-2129753377" target="_blank" rel="noopener noreferrer">per ResearchGate ↗</a>
+          </p>
         </section>
 
         <section className="doc-section" id="before-the-bar">

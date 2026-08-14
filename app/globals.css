@@ -401,7 +401,51 @@ h1 {
 }
 .exhibit-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 
-/* ---------- § 4 Before the bar ---------- */
+/* ---------- § 4 Scholarship ---------- */
+
+.pubs { max-width: 68ch; margin-top: 44px; }
+.pub-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid var(--hairline);
+}
+.pub-year {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  padding-top: 6px;
+}
+.pub-row h3 { font-size: 1.1875rem; margin-bottom: 6px; line-height: 1.35; }
+.pub-venue {
+  margin: 0 0 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.pub-row p:last-child { margin: 0; color: var(--ink-2); }
+.pub-note {
+  max-width: 68ch;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- § 5 Before the bar ---------- */
 
 .formation {
   display: grid;
@@ -448,7 +492,7 @@ h1 {
   color: var(--ink-2);
 }
 
-/* ---------- § 5 Engage ---------- */
+/* ---------- § 6 Correspondence ---------- */
 
 .contact-grid {
   display: grid;
@@ -584,6 +628,7 @@ h1 {
   .exhibit { padding: 32px 22px 26px; }
   .exhibit-tab { left: 14px; }
   .docket-row { grid-template-columns: 1fr; gap: 8px; }
+  .pub-row { grid-template-columns: 1fr; gap: 8px; }
   .practice-list li { grid-template-columns: 1fr; gap: 8px; }
   .doc-links { flex-direction: column; gap: 16px; }
 }
