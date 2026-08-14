@@ -453,6 +453,17 @@ export default function Home() {
                   </p>
                 </div>
               </li>
+              <li>
+                <span className="edu-year">2007</span>
+                <div>
+                  <p>
+                    Awarded the Reed Smith Fellowship at the University of
+                    Pittsburgh School of Law — the firm&rsquo;s annual award to
+                    one rising second-year student who has overcome economic
+                    or social adversity.
+                  </p>
+                </div>
+              </li>
             </ul>
           </div>
           <p className="elsewhere">
