@@ -365,6 +365,26 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <figure className="pull-cite">
+            <blockquote>
+              &ldquo;Probably the first published work on combining carbon
+              credit and DLT comes from Leonhard.&rdquo;
+            </blockquote>
+            <figcaption>
+              <a href="https://arxiv.org/abs/2403.03865" target="_blank" rel="noopener noreferrer">P. Baiz (Imperial College London), &ldquo;Blockchain and Carbon Markets: Standards Overview&rdquo; (2024) ↗</a>
+            </figcaption>
+          </figure>
+          <div className="cited-in">
+            <h3 className="col-label">Cited in</h3>
+            <ul className="cite-list">
+              <li><a href="https://academic.oup.com/jfr/article/6/2/172/5913239" target="_blank" rel="noopener noreferrer">Zetzsche, Arner &amp; Buckley, &ldquo;Decentralized Finance,&rdquo; Journal of Financial Regulation (Oxford University Press, 2020)</a></li>
+              <li><a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC110298" target="_blank" rel="noopener noreferrer">European Commission, Joint Research Centre, &ldquo;Blockchain in Energy Communities&rdquo; (2018)</a></li>
+              <li><a href="https://arxiv.org/abs/1904.03254" target="_blank" rel="noopener noreferrer">Trautman &amp; Molesky, &ldquo;A Primer for Blockchain,&rdquo; UMKC Law Review, Vol. 88 (2019)</a></li>
+              <li><a href="https://doi.org/10.3389/fbloc.2020.00025" target="_blank" rel="noopener noreferrer">&ldquo;The DAO Controversy: The Case for a New Species of Corporate Governance?,&rdquo; Frontiers in Blockchain (2020)</a></li>
+              <li><a href="https://doi.org/10.1109/OJCS.2021.3072661" target="_blank" rel="noopener noreferrer">&ldquo;From Technology to Society: An Overview of Blockchain-Based DAO,&rdquo; IEEE Open Journal of the Computer Society (2021)</a></li>
+              <li><a href="https://doi.org/10.1146/annurev-chembioeng-092120-022935" target="_blank" rel="noopener noreferrer">&ldquo;Blockchain Technology in the Chemical Industry,&rdquo; Annual Review of Chemical and Biomolecular Engineering (2022)</a></li>
+            </ul>
+          </div>
           <p className="pub-note">
             Cited 50+ times in the academic literature ·{" "}
             <a href="https://www.researchgate.net/scientific-contributions/Robert-Donald-Leonhard-2129753377" target="_blank" rel="noopener noreferrer">per ResearchGate ↗</a>
@@ -398,6 +418,42 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+          </div>
+          <div className="record-extra">
+            <h3 className="col-label">Also of record</h3>
+            <ul>
+              <li>
+                <span className="edu-year">2005</span>
+                <div>
+                  <p>
+                    Wrote and produced <cite>Infidel</cite> (writing as Bobby
+                    Leonhard) — a play drawn from his convoy service in Iraq,
+                    staged at Raven Theatre in Chicago with his own footage
+                    from Iraq projected over the set. The Chicago Reader wrote
+                    that &ldquo;the script&rsquo;s harsh veracity is
+                    unquestionable.&rdquo;
+                  </p>
+                  <p className="rx-links">
+                    <a href="https://chicagoreader.com/news/three-men-and-a-humvee/" target="_blank" rel="noopener noreferrer">profile ↗</a>
+                    <a href="https://chicagoreader.com/arts-culture/infidel/" target="_blank" rel="noopener noreferrer">review ↗</a>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span className="edu-year">2005</span>
+                <div>
+                  <p>
+                    Stood on the podium behind President George W. Bush at the
+                    Fourth of July address at West Virginia University, while
+                    finishing his National Guard service.
+                  </p>
+                  <p className="rx-links">
+                    <a href="https://chicagoreader.com/news/three-men-and-a-humvee/" target="_blank" rel="noopener noreferrer">as reported ↗</a>
+                    <a href="https://www.presidency.ucsb.edu/documents/remarks-independence-day-celebration-morgantown-west-virginia" target="_blank" rel="noopener noreferrer">the address ↗</a>
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
           <p className="elsewhere">
             Elsewhere: embedded systems · energy &amp; sustainable development
