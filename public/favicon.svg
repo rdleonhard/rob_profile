@@ -1,12 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2f7bff"/>
-      <stop offset="1" stop-color="#58c8ff"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="12" fill="#060a12"/>
-  <rect x="1" y="1" width="62" height="62" rx="11" fill="none" stroke="#24314a" stroke-width="2"/>
-  <text x="33" y="41" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="-3" fill="#f5f7fc" text-anchor="middle">RL</text>
-  <rect x="20" y="49" width="24" height="2" fill="url(#accent)"/>
+  <rect width="64" height="64" fill="#f7f5ef"/>
+  <rect x="2.5" y="2.5" width="59" height="59" fill="none" stroke="#191713" stroke-width="2"/>
+  <text x="30" y="43" font-family="'Source Serif 4', Georgia, 'Times New Roman', serif" font-size="31" font-weight="600" letter-spacing="-2" fill="#191713" text-anchor="middle">RL</text>
+  <rect x="49" y="31" width="5" height="12" fill="#9e3b27"/>
 </svg>

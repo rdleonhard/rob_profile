@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +18,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://rdleonhard.github.io/rob_profile/";
 const portraitUrl = new URL("rob-suit-portrait.jpg", siteUrl).toString();
+const cardUrl = new URL("og-card.png", siteUrl).toString();
 
 const title = "Robert D. Leonhard — Attorney · Digital Assets · Emerging Technology";
 const description =
@@ -26,6 +27,10 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   other: {
     "codex-preview": "development",
   },
@@ -41,8 +46,10 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: portraitUrl,
-        alt: "Robert D. Leonhard in a dark suit",
+        url: cardUrl,
+        width: 1200,
+        height: 630,
+        alt: "Robert D. Leonhard — an attorney of record, with a commit history",
       },
     ],
   },
@@ -50,8 +57,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [portraitUrl],
+    images: [cardUrl],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7f5ef",
 };
 
 const personJsonLd = {
@@ -85,6 +96,7 @@ const personJsonLd = {
       name: "West Virginia University",
     },
   ],
+  description,
   knowsAbout: [
     "Corporate law",
     "Securities regulation",
@@ -92,7 +104,11 @@ const personJsonLd = {
     "Investment management",
     "Regulatory strategy",
     "Blockchain technology",
+    "Decentralized finance",
+    "Decentralized autonomous organizations",
+    "Carbon markets",
   ],
+  award: "Reed Smith Fellowship, University of Pittsburgh School of Law (2007)",
   sameAs: [
     "https://github.com/rdleonhard",
     "https://rdleonhard.github.io/open-esquire-verifier/",

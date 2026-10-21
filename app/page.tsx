@@ -8,8 +8,9 @@ const copyrightYear = buildDate?.slice(0, 4) ?? "2026";
 const ledger = [
   "17+ yrs practice",
   "GC, CW Digital Funds",
-  "30+ clients, Ethereum ecosystem",
-  "U.S. Army NCO — Field Artillery, Iraq",
+  "30+ Ethereum clients",
+  "5 SSRN papers",
+  "Army NCO — Field Artillery, Iraq",
   "LL.M. / J.D.",
 ];
 
@@ -78,7 +79,7 @@ const docket = [
   {
     date: "17+ yrs",
     role: "Private practice — Open Esquire",
-    body: "Founder of a boutique practice serving companies, founders, investment vehicles, and emerging-technology ventures; outside counsel to 30+ crypto clients across the Ethereum ecosystem.",
+    body: "Counsel for the on-chain economy. Founder of a boutique practice serving companies, founders, investment vehicles, and emerging-technology ventures; outside counsel to 30+ crypto clients across the Ethereum ecosystem.",
   },
   {
     date: "Admitted",
@@ -227,6 +228,9 @@ export default function Home() {
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/rob-suit-portrait.jpg`}
                 alt="Robert D. Leonhard in a dark suit"
+                width={720}
+                height={1518}
+                fetchPriority="high"
               />
             </div>
             <figcaption>Fig. 1 — R. D. Leonhard, Pittsburgh, PA</figcaption>
@@ -519,6 +523,8 @@ export default function Home() {
             Source:{" "}
             <a href="https://github.com/rdleonhard/rob_profile" target="_blank" rel="noopener noreferrer">github.com/rdleonhard/rob_profile</a>
             {buildDate ? ` · Last revised ${buildDate}` : ""}
+            {" · "}
+            <a href="#print" className="print-link" onClick={(event) => { event.preventDefault(); window.print(); }}>Print this record</a>
           </p>
           <p>© {copyrightYear} Robert D. Leonhard · Pennsylvania attorney · Responsible for site content</p>
         </footer>
